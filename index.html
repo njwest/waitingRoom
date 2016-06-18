@@ -1,142 +1,119 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>The Waiting Room</title>
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Enriqueta' rel='stylesheet' type='text/css'>
-
-
-    <style type="text/css">
+  <title>The Waiting Room</title>
+  <link href="css/reset.css" rel="stylesheet" type="text/css">
+  <link href=
+  "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"
+  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=
+  "stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Cedarville+Cursive' rel=
+  'stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Enriqueta' rel=
+  'stylesheet' type='text/css'>
+  <style type="text/css">
     body{
-    	background-image: url('norwegian_rose_@2x.png');
+    background-image: url('norwegian_rose_@2x.png');
     }
-        .panel-heading {
-        	font-size: 1em;
-            background-color: #355e3b;
-            color: white;
-        }
-        
+    .panel-heading {
+    font-size: 1em;
+    background-color: #355e3b;
+    color: white;
+    }
 
-        .tableHeader{
-        	color: #fff;
-        }
+    .tableHeader{
+    color: #fff;
+    }
 
     .parallax{
-    	background-image: url('norwegian_rose_@2x.png');
+    background-image: url('norwegian_rose_@2x.png');
     }
     label{
-        color: #000;
-        font-size: 1em;
+    color: #000;
+    font-size: 1em;
     }
-    </style>
-
+  </style>
 </head>
-
 <body>
-<div class = "parrallax-container">
-	<div class="parallax">
-		<img src="norwegian_rose_@2x.png"/>
-	</div>
-</div>
+  <div class="parrallax-container">
+    <div class="parallax"><img src="norwegian_rose_@2x.png"></div>
+  </div>
+  <div class="container">
+    <h1>The Waiting Room</h1>
+    <h4>Train Schedule Admin Panel</h4>
+    <div class="row">
+      <div class="col s12">
+        <br>
+        <div class="card-panel teal">
+          <div class="card-title">
+            <h3 class="tableHeader"><i class=
+            "small material-icons">schedule</i> Train Schedule</h3>
+          </div>
+          <div class="card-panel white" id="wellSection">
+          
+            <table class="responsive-table highlight">
+              <thead>
+                <tr>
+                  <th>Train</th>
+                  <th>Destination</th>
+                  <th>Frequency</th>
+                  <th>Next Arrival</th>
+                  <th>Miles Away</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
 
-    <div class="container">
-
-            <h1>The Waiting Room</h1>
-            <h4>Train Schedule and RPS Lounge</h4>
-
-
-        <div class="row">
-            <div class="col s12">
-                <br>
-
-                <div class="card-panel teal">
-
-                    <div class="card-title">
-                        <h3 class="tableHeader"><i class="small material-icons">schedule</i>   Train Schedule</h3>
-                    </div>
-
-                    <div class="card-panel white" id="wellSection">
-                        <table class="responsive-table highlight">
-                            <thead>
-                                <tr>
-                                    <th>Train</th>
-                                    <th>Destination</th>
-                                    <th>Frequency</th>
-                                    <th>Next Arrival</th>
-                                    <th>Miles Away</th>
-                                </tr>
-                            </thead>
-
-                            <tbody></tbody>
-
-
-                        </table>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="col s12">
-                <br>
-                <!-- First panel is for handling the search parameters -->
-                <div class="card-panel teal">
-                    <div class="card-title">
-                        <h3 class="tableHeader"><i class="small material-icons">call_made</i>   Add a Train</h3>
-                    </div>
-                    <div class="card-panel white">
-
-                        <form role="form">
-
-                            <div class="form-group">
-                                <label>Train</label>
-                                <input type="text" class="form-control " id="train">
-                            </div>
-                
-                            <div class="form-group">
-                                <label>Destination</label>
-                                <input type="text" class="form-control" id="destination">
-                            </div>
-
-                            <div class="form-group">
-                                <label>First train time (HH:mm - military time)</label>
-                                <input type="text" class="form-control" id="firstTrain">
-                            </div>
-
-                            <!-- Here we capture the End Year Parameter -->
-                            <div class="form-group">
-                                <label>Frequency (min)</label>
-                                <input type="text" class="form-control" id="freq">
-                            </div>
-
-                            <!-- Here we have our final submit button -->
-                            <button type="submit" class="btn waves-effect waves-light" id="submit"><i class="material-icons left">library_add</i> 
-					  	Submit</button>
-                            <button type="button" class="btn waves-effect waves-light" id="clearAll"><i class="material-icons left">clear_all</i> 
-  					  	Clear</button>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-
-
-
-
-
+      </div>
+      <div class="col s12">
+        <br>
+        <!-- First panel is for handling the search parameters -->
+        <div class="card-panel teal">
+          <div class="card-title">
+            <h3 class="tableHeader"><i class=
+            "small material-icons">call_made</i> Add a Train</h3>
+          </div>
+          <div class="card-panel white">
+            <form role="form">
+              <div class="form-group">
+                <label>Train</label> <input class="form-control" id="train"
+                type="text">
+              </div>
+              <div class="form-group">
+                <label>Destination</label> <input class="form-control" id=
+                "destination" type="text">
+              </div>
+              <div class="form-group">
+                <label>First train time (HH:mm - military time)</label>
+                <input class="form-control" id="firstTrain" type="text">
+              </div><!-- Here we capture the End Year Parameter -->
+              <div class="form-group">
+                <label>Frequency (min)</label> <input class="form-control" id=
+                "freq" type="text">
+              </div><!-- Here we have our final submit button -->
+              <button class="btn waves-effect waves-light" id="submit" type=
+              "submit"><i class="material-icons left">library_add</i>
+              Submit</button> <button class="btn waves-effect waves-light" id=
+              "clearAll" type="button"><i class=
+              "material-icons left">clear_all</i> Clear</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js">
-    </script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/trainsched.js">
-    </script>
-    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-
+  </div>
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js">
+  </script> 
+  <script src="js/materialize.min.js" type="text/javascript">
+  </script> 
+  <script src="js/trainsched.js">
+  </script> 
+  <script src='js/moment.js' type="text/javascript"></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js">
+  </script>
 </body>
-
 </html>
