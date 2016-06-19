@@ -37,15 +37,33 @@ $(function(){
 
 awaitingRoom.on('child_added', function(child, prevChild){
   console.log(child.val().name);
+  var firstTrain = child.val().firstTrain;
+  var frequency = child.val().freq;
+
+  var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+  
+  var now = moment();
+  console.log(moment(now).format("HH:mm"));
+
+  var diff = moment().diff(moment(firstTrainConverted), "minutes");
+  var tDiff = diff % frequency;
+  console.log(tDiff);
+
+  var minTilTrain = frequency - tDiff;
+  console.log(minTilTrain);
+
+  var next = moment().add(minTilTrain, "minutes");
+  var arrival = moment(next).format("LT");
+
     row = $('<tr>');
       tTrain = $('<td>'+ child.val().train +'</td>');
       tDestination = $('<td>'+ child.val().destination+ '</td>');
-      tNextArrive = $('<td>'+ child.val().firstTrain + '</td>');//add Moment.JS calculation
-      tMinutesAway = $('<td>'+ child.val().firstTrain + '</td>');//add Moment.JS calculation
+      tNextArrive = $('<td>'+ arrival + '</td>');//add Moment.JS calculation
+      tMinutesAway = $('<td>'+ minTilTrain + '</td>');//add Moment.JS calculation
       tFreq = $('<td>'+ child.val().freq+'</td>');
     row.append(tTrain, tDestination, tFreq, tNextArrive, tMinutesAway);
     $('tbody').append(row);
 })
 
 
-});//doc.ready
+});//doc.ready    
