@@ -21,7 +21,7 @@ $(function(){
   			$("#train").val('');
   			$("#destination").val('');
   			$("#firstTrain").val('');
-  			$("#rate").val('');
+  			$("#freq").val('');
 
   return false;
   });
@@ -40,11 +40,10 @@ awaitingRoom.on('child_added', function(child, prevChild){
   var firstTrain = child.val().firstTrain;
   var frequency = child.val().freq;
 
-  var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
-  
   var now = moment();
   console.log(moment(now).format("HH:mm"));
 
+  var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
   var diff = moment().diff(moment(firstTrainConverted), "minutes");
   var tDiff = diff % frequency;
   console.log(tDiff);
